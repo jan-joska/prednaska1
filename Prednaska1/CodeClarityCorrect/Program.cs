@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using CodeClarity;
 
 namespace CodeClarityCorrect
@@ -9,8 +10,9 @@ namespace CodeClarityCorrect
         {
             try
             {
-                TestMathOperation();
-                TestPersonRepository();
+                //TestMathOperation();
+                //TestPersonRepository();
+                TestIncorrectInput();
             }
             catch (Exception e)
             {
@@ -18,6 +20,17 @@ namespace CodeClarityCorrect
             }
 
             Console.ReadLine();
+        }
+
+        private static void TestIncorrectInput()
+        {
+            var customerNumber = CustomerNumber.Parse("3ABC");
+            if (customerNumber.IsFailure)
+            {
+                Console.WriteLine(string.Join(",",customerNumber.Errors.Select(i => i.Details)));
+                return;
+            } 
+            Console.WriteLine($"Welcome, user {customerNumber.Value}");
         }
 
         private static void TestMathOperation()

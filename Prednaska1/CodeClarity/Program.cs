@@ -8,8 +8,9 @@ namespace CodeClarity
         {
             try
             {
-                TestMathOperation();
-                TestPersonRepository();
+                //TestMathOperation();
+                //TestPersonRepository();
+                TestIncorrectInput();
             }
             catch (Exception e)
             {
@@ -17,6 +18,26 @@ namespace CodeClarity
             }
 
             Console.ReadLine();
+        }
+
+        private static void TestIncorrectInput()
+        {
+            try
+            {
+                var cn2 = CustomerNumber.Parse("1ABC");
+            }
+            catch (ArgumentException aex)
+            {
+                Console.WriteLine(aex);
+            }
+            catch (FormatException fex)
+            {
+                Console.WriteLine(fex);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
 
         private static void TestMathOperation()
