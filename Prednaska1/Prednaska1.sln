@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encapsulization", "Encapsulization\Encapsulization.csproj", "{10EFD5AC-1BF1-438F-8C48-18F473715C26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncapsulizationCorrect", "EncapsulizationCorrect\EncapsulizationCorrect.csproj", "{034B0E89-B7B6-4668-B935-5C82206386F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimitiveObsession", "PrimitiveObsession\PrimitiveObsession.csproj", "{054C1694-E9BC-40E8-8F02-F87DDF0CBEC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{10EFD5AC-1BF1-438F-8C48-18F473715C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10EFD5AC-1BF1-438F-8C48-18F473715C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10EFD5AC-1BF1-438F-8C48-18F473715C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{034B0E89-B7B6-4668-B935-5C82206386F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{034B0E89-B7B6-4668-B935-5C82206386F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{034B0E89-B7B6-4668-B935-5C82206386F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{034B0E89-B7B6-4668-B935-5C82206386F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{054C1694-E9BC-40E8-8F02-F87DDF0CBEC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{054C1694-E9BC-40E8-8F02-F87DDF0CBEC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{054C1694-E9BC-40E8-8F02-F87DDF0CBEC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{054C1694-E9BC-40E8-8F02-F87DDF0CBEC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
