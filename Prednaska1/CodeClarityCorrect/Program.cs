@@ -22,6 +22,7 @@ namespace CodeClarityCorrect
             Console.ReadLine();
         }
 
+
         private static void TestIncorrectInput()
         {
             var customerNumber = CustomerNumber.Parse("3ABC");
