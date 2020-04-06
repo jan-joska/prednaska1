@@ -3,22 +3,19 @@ using System.Linq;
 
 namespace Encapsulization
 {
-    public class InvoiceItem
-    {
-        public int Id { get; set; }
-        public float Amount { get; set; }
-        public decimal UnitPrice { get; set; }
-    }
-
     // Narušení zapouzdření - členy lze libovolně modifikovat. Invarianty nejsou 
     // vynuceny
     public class Invoice
     {
-        public int InvoiceId { get; set; }
-        public string InvoiceNumber { get; set; }
-        public List<InvoiceItem> Items { get; set; } = new List<InvoiceItem>();
+        public int InvoiceId { get; set; } // Accessor a mutator volně k dispozici
+        public string InvoiceNumber { get; set; } // Accessor a mutator volně k dispozici
+        public List<InvoiceItem> Items { get; set; } = new List<InvoiceItem>(); // Umožňuje nastavit celý list zvenku. Naprosté porušení zapouzdření.
     }
 
+    /// <summary>
+    /// Funkce vytažená mimo objekt. Validuje stav objektu, který díky tomu musí být velmi otevřený.
+    /// Není např. žádný přístup k privátním členům faktury
+    /// </summary>
     public class InvoiceValidator
     {
         public static IEnumerable<string> Validate(Invoice invoice)
@@ -35,6 +32,11 @@ namespace Encapsulization
         }
     }
 
+    /// <summary>
+    /// Funke / mutátor vytažená mimo objekt. Mění stav, vytváří objekt z věnjšku.
+    /// Je schopen manipulovat zájmovým objektem i mimo jeho invarianty.
+    /// Funkcionalita je těžko k nalezení a musí respektovat jiné mutátory.
+    /// </summary>
     public class InvoiceManager
     {
         public static void AddNewItem(Invoice invoice, InvoiceItem item)

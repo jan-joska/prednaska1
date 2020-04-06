@@ -17,7 +17,7 @@ namespace Encapsulization
             // Porušení pravidla o jedné položce
             invoice.Items = new List<InvoiceItem>();
 
-            // Změna Id faktury
+            // Změna Id faktury - není povoleno, porušení invariantu.
             invoice.InvoiceId = 6;
 
             // Změna čísla faktury na neplatne
