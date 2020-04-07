@@ -25,7 +25,7 @@ namespace CodeClarityCorrect
 
         private static void TestIncorrectInput()
         {
-            var customerNumber = CustomerNumber.Parse("3ABC");
+            Result<CustomerNumber> customerNumber = CustomerNumber.Parse("3ABC");
             if (customerNumber.IsFailure)
             {
                 Console.WriteLine(string.Join(",",customerNumber.Errors.Select(i => i.Details)));
