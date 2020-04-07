@@ -12,8 +12,14 @@ namespace Encapsulization
 
         public static void UseInvoice()
         {
+
+            
+
             var invoice = InvoiceManager.Create();
             
+            // Mutace stavu z vnějšku
+            InvoiceManager.AddNewItem(invoice, new InvoiceItem());
+
             // Porušení pravidla o jedné položce
             invoice.Items = new List<InvoiceItem>();
 

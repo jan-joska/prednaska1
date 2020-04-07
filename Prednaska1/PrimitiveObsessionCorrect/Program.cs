@@ -30,9 +30,19 @@ namespace PrimitiveObsessionCorrect
             
             var addr = new EmailAddress("jan@joska.net");
             var otherAddr = new EmailAddress("jan@joska.net");
+            
+            // Equals
             Console.WriteLine($"Are {addr} and {otherAddr} same {addr.Equals(otherAddr)}");
+            
+            // Implicitní cast
             string addressAsString = addr;
+            
+            // Explicitní cast
             var addr2 = (EmailAddress)"jan@joska.net";
+
+            var emailToTest = "michal.altair.valasek.@email.cz";
+            var isValidEmail = EmailAddress.IsValidEmail(emailToTest);
+            Console.WriteLine($"Je email {emailToTest} platný: {isValidEmail}");
         }
 
         private static void TestKilogram()

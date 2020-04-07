@@ -83,14 +83,29 @@ namespace PrimitiveObsessionCorrect
             return !Equals(left, right);
         }
 
+        // Explicitní - na vyžádání, musím použít operátor závorky () cast
         public static explicit operator EmailAddress(string input)
         {
             return new EmailAddress(input);
         }
 
+        // Implicitní - udělá se samo bez operátoru závorky ()
         public static implicit operator string(EmailAddress input)
         {
             return input.ToString();
+        }
+
+        public static bool IsValidEmail(string input)
+        {
+            try
+            {
+                var e = new EmailAddress(input);
+                return true;
+            }
+            catch (FormatException e) // Nevhodná kontrola pomocí výjimky
+            {
+                return false;
+            }
         }
     }
 }

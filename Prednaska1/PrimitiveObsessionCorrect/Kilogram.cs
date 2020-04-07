@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace PrimitiveObsessionCorrect
 {
+    /// <summary>
+    /// Ukázka typu, který lze porovnávat s jinými, nikoliv pouze na rovnost.
+    /// </summary>
     public class Kilogram : IEquatable<Kilogram>, IComparable<Kilogram>, IComparable
     {
         private readonly double _value;
@@ -21,11 +24,14 @@ namespace PrimitiveObsessionCorrect
 
         public Kilogram(double value)
         {
+            // Záporné hodnoty hmotnosti ve vesmíru neexistují
+            // Osoba nemůže vážit např. -5kg.
             if (value < 0)
             {
                 throw new ArgumentOutOfRangeException("Hodnota musí být nezáporný double");
             }
 
+            // Hodnota větší než milion kilogramů je jasně nesmyslná.
             if (value > (10e6))
             {
                 throw new ArgumentOutOfRangeException("Hondota musí být menší než jeden milion kilogramů.");
@@ -83,22 +89,22 @@ namespace PrimitiveObsessionCorrect
             return $"{_value} kg";
         }
 
-        public static bool operator <(Kilogram left, Kilogram right)
+        public static bool operator < (Kilogram left, Kilogram right)
         {
             return Comparer<Kilogram>.Default.Compare(left, right) < 0;
         }
 
-        public static bool operator >(Kilogram left, Kilogram right)
+        public static bool operator > (Kilogram left, Kilogram right)
         {
             return Comparer<Kilogram>.Default.Compare(left, right) > 0;
         }
 
-        public static bool operator <=(Kilogram left, Kilogram right)
+        public static bool operator <= (Kilogram left, Kilogram right)
         {
             return Comparer<Kilogram>.Default.Compare(left, right) <= 0;
         }
 
-        public static bool operator >=(Kilogram left, Kilogram right)
+        public static bool operator >= (Kilogram left, Kilogram right)
         {
             return Comparer<Kilogram>.Default.Compare(left, right) >= 0;
         }
@@ -128,27 +134,29 @@ namespace PrimitiveObsessionCorrect
             return _value.GetHashCode();
         }
 
-        public static Kilogram operator +(Kilogram left, Kilogram right)
+        public static Kilogram operator + (Kilogram left, Kilogram right)
         {
             return new Kilogram(left._value + right._value);
         }
 
-        public static bool operator ==(Kilogram left, Kilogram right)
+        public static bool operator == (Kilogram left, Kilogram right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(Kilogram left, Kilogram right)
+        public static bool operator != (Kilogram left, Kilogram right)
         {
             return !Equals(left, right);
         }
 
-        public static Kilogram FromTons(double tons)
+        // Zapouzdřeí konverzí z jiných hmotnostních jednotek
+
+        public static Kilogram FromTons (double tons)
         {
             return new Kilogram(tons * 1000d);
         }
 
-        public static Kilogram FromGrams(double grams)
+        public static Kilogram FromGrams (double grams)
         {
             return new Kilogram(grams / 1000d);
         }
@@ -157,6 +165,8 @@ namespace PrimitiveObsessionCorrect
         {
             return new Kilogram(dekaGrams / 100d);
         }
+
+        // Zapouzdření konverzí do jiných hmotnostních jednotek
 
         public double ToGrams()
         {

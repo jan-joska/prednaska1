@@ -10,8 +10,8 @@ namespace PrimitiveObsession
             var p = new Person()
             {
                 Id = 1,
-                Email = "neplatny_email.@seznam.cz",
-                Weight = 150
+                Email = "neplatny_email.@seznam.cz", // Nalezena nedokonalá kontrola
+                Weight = 150f
             };
 
             EmailSender.SendEmail(p.Email, "Test","Test");

@@ -5,11 +5,24 @@ namespace PrimitiveObsession
     public class Person
     {
         private string _email;
+        private float _weight; // in kg
 
         public int Id { get; set; }
 
-        public float Weight { get; set; }
+        // Hmotnost člověka v kilogramech
+        public float Weight
+        {
+            get => _weight;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentOutOfRangeException("Hodnota kilogramu je mimo rozsah");
+                }
+            }
+        }
 
+        // Emailová adresa
         public string Email
         {
             get => _email;
