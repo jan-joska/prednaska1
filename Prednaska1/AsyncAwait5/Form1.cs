@@ -26,6 +26,20 @@ namespace AsyncAwait5
             var c = new WebClient();
             var result = await c.DownloadStringTaskAsync(new Uri("http://www.idnes.cz"));
             textBox1.Text = result.Length.ToString();
+
+            try
+            {
+                var r = await c.DownloadStringTaskAsync(new Uri("http://www.idnes.cz"));
+            }
+            catch (Exception exception)
+            {
+                var r2 = await c.DownloadStringTaskAsync(new Uri("http://www.idnes.cz"));
+            }
+            finally
+            {
+                var r3 = await c.DownloadStringTaskAsync(new Uri("http://www.idnes.cz"));
+            }
+
         }
 
         // NEMUSÍ SE PODAŘIT ZHROUTIT POKAŽDÉ - ZÁKEŘNÁ CHYBA
