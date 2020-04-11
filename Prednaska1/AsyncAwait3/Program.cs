@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace AsyncAwait2
@@ -14,11 +13,11 @@ namespace AsyncAwait2
 
             var content = await client.GetByteArrayAsync(new Uri("http://www.idnes.cz"));
 
-            var freak = new Freak();
+            var freak = new Freak(); 
 
-            await freak;
+            await freak; // <---------- 
 
-            await 15;
+            await 15; // <---------- 
 
             Console.ReadLine();
         }
@@ -32,12 +31,11 @@ namespace AsyncAwait2
         }
     }
 
-    public static class IntExtensions 
+    public static class IntExtensions
     {
-        public static TaskAwaiter GetAwaiter(this System.Int32 input)
+        public static TaskAwaiter GetAwaiter(this int input)
         {
             return new TaskAwaiter();
         }
     }
-
 }
