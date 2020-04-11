@@ -19,10 +19,6 @@ namespace CodeClarityCorrect
 
         public static Result<CustomerNumber> Parse(string input)
         {
-            if (string.IsNullOrEmpty(input))
-            {
-                throw new ArgumentException("Value cannot be null or empty.", nameof(input));
-            }
             if (!regex.IsMatch(input))
             {
                 return new Result<CustomerNumber>(null, false, new List<Error>() { new Error() { Details = $"Poskytnutý vstup '{input}' není platné zákaznické číslo" } });

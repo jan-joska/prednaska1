@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace CodeClarity
 {
@@ -49,6 +50,7 @@ namespace CodeClarity
         private static void TestPersonRepository()
         {
             var p = PersonRepository.GetPersonById(2);
+            
             Console.WriteLine(p.Name);
         }
     }

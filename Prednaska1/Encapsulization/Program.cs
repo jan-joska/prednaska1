@@ -12,9 +12,6 @@ namespace Encapsulization
 
         public static void UseInvoice()
         {
-
-            
-
             var invoice = InvoiceManager.Create();
             
             // Mutace stavu z vnějšku

@@ -73,12 +73,12 @@ namespace PrimitiveObsessionCorrect
             return _address != null ? _address.GetHashCode() : 0;
         }
 
-        public static bool operator ==(EmailAddress left, EmailAddress right)
+        public static bool operator == (EmailAddress left, EmailAddress right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(EmailAddress left, EmailAddress right)
+        public static bool operator != (EmailAddress left, EmailAddress right)
         {
             return !Equals(left, right);
         }
