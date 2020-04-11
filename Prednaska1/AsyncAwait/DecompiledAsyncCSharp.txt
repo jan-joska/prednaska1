@@ -1,0 +1,74 @@
+﻿using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+using System.Security.Permissions;
+
+[assembly: CompilationRelaxations(8)]
+[assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.Default | DebuggableAttribute.DebuggingModes.DisableOptimizations | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints | DebuggableAttribute.DebuggingModes.EnableEditAndContinue)]
+[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
+[assembly: AssemblyVersion("0.0.0.0")]
+[module: UnverifiableCode]
+namespace AsyncAwait
+{
+    internal class Program
+    {
+        [CompilerGenerated]
+        private sealed class <Main>d__0 : IAsyncStateMachine
+        {
+            public int <>1__state;
+
+            public AsyncVoidMethodBuilder <>t__builder;
+
+            public string[] args;
+
+            private void MoveNext()
+            {
+                int num = <>1__state;
+                try
+                {
+                    Console.WriteLine("Hello world");
+                }
+                catch (Exception exception)
+                {
+                    <>1__state = -2;
+                    <>t__builder.SetException(exception);
+                    return;
+                }
+                <>1__state = -2;
+                <>t__builder.SetResult();
+            }
+
+            void IAsyncStateMachine.MoveNext()
+            {
+                //ILSpy generated this explicit interface implementation from .override directive in MoveNext
+                this.MoveNext();
+            }
+
+            [DebuggerHidden]
+            private void SetStateMachine(IAsyncStateMachine stateMachine)
+            {
+            }
+
+            void IAsyncStateMachine.SetStateMachine(IAsyncStateMachine stateMachine)
+            {
+                //ILSpy generated this explicit interface implementation from .override directive in SetStateMachine
+                this.SetStateMachine(stateMachine);
+            }
+        }
+
+        [AsyncStateMachine(typeof(<Main>d__0))]
+        [DebuggerStepThrough]
+        public static void Main(string[] args)
+        {
+            <Main>d__0 stateMachine = new <Main>d__0();
+            stateMachine.args = args;
+            stateMachine.<>t__builder = AsyncVoidMethodBuilder.Create();
+            stateMachine.<>1__state = -1;
+            AsyncVoidMethodBuilder <>t__builder = stateMachine.<>t__builder;
+            <>t__builder.Start(ref stateMachine);
+        }
+    }
+}
