@@ -19,21 +19,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait", "AsyncAwait\As
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIResponsivness", "UIResponsivness\UIResponsivness.csproj", "{B5E70B8B-E2AD-4C75-8A17-625E232ACE07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParalellProcessing", "ParalellProcessing\ParalellProcessing.csproj", "{ABF81512-E2D3-49D9-98D4-BFF68F38058F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParalellProcessing", "ParalellProcessing\ParalellProcessing.csproj", "{ABF81512-E2D3-49D9-98D4-BFF68F38058F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait2", "AsyncAwait2\AsyncAwait2.csproj", "{5D1AD1ED-5EB9-430A-9744-C4D9B13A983D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait2", "AsyncAwait2\AsyncAwait2.csproj", "{5D1AD1ED-5EB9-430A-9744-C4D9B13A983D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait3", "AsyncAwait3\AsyncAwait3.csproj", "{7A34B3DA-8FAB-4BD0-9FED-DE317DA040F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait3", "AsyncAwait3\AsyncAwait3.csproj", "{7A34B3DA-8FAB-4BD0-9FED-DE317DA040F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait4", "AsyncAwait4\AsyncAwait4.csproj", "{60E61271-DF64-4409-9A85-096D4515DF9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait4", "AsyncAwait4\AsyncAwait4.csproj", "{60E61271-DF64-4409-9A85-096D4515DF9E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait5", "AsyncAwait5\AsyncAwait5.csproj", "{FD691333-3F3D-428A-98C1-6150D8CB3B9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait6", "AsyncAwait6\AsyncAwait6.csproj", "{52798FB9-CC60-4C08-92DC-CC7ED12FC36E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait6", "AsyncAwait6\AsyncAwait6.csproj", "{52798FB9-CC60-4C08-92DC-CC7ED12FC36E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait7", "AsyncAwait7\AsyncAwait7.csproj", "{2E018530-3336-42EA-BCE9-3F3B7F4B0193}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait8", "AsyncAwait8\AsyncAwait8.csproj", "{35C45870-E2DD-4FEA-AD04-34E21D03FA06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait8", "AsyncAwait8\AsyncAwait8.csproj", "{35C45870-E2DD-4FEA-AD04-34E21D03FA06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonApi", "CommonApi\CommonApi.csproj", "{5EF1B2D0-2547-499E-8C2D-B9A70DC1F274}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{35C45870-E2DD-4FEA-AD04-34E21D03FA06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35C45870-E2DD-4FEA-AD04-34E21D03FA06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35C45870-E2DD-4FEA-AD04-34E21D03FA06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EF1B2D0-2547-499E-8C2D-B9A70DC1F274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EF1B2D0-2547-499E-8C2D-B9A70DC1F274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EF1B2D0-2547-499E-8C2D-B9A70DC1F274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EF1B2D0-2547-499E-8C2D-B9A70DC1F274}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

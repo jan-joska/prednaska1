@@ -31,10 +31,6 @@ namespace AsyncAwait7
 
             // Lepší, ale blokuji UI vlákno, takže taky jakože napiču
             //await Task.Delay(2000).ConfigureAwait(false);
-
-
-            
-
         }
 
         private void DoCpuWork()

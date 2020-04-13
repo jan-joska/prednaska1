@@ -7,6 +7,8 @@ namespace AsyncAwait2
 {
     internal class Program
     {
+        // DEMONSTRACE ČEKÁNÍ NA AWAITABLE
+
         public static async Task Main(string[] args)
         {
             var client = new HttpClient();

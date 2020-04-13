@@ -20,6 +20,8 @@ namespace UIResponsivness
             textBox1.Text += $"{o}{Environment.NewLine}";
         }
 
+
+        // PRVNÍ - RYCHLÉ BLOKOVÁNÍ VLÁKNA, TÉMĚŘ NIC SE NEDĚJE
         private void button1_Click(object sender, EventArgs e)
         {
             var c = new WebClient();
@@ -27,12 +29,14 @@ namespace UIResponsivness
             Write($"IDNES.CZ HOMEPAGE {data.Length}");
         }
 
+        // DRUHÝ, BLOKACE UI VLÁKNA - FORMULÁŘ NEODPOVÍDÁ
         private void button2_Click(object sender, EventArgs e)
         {
             Thread.Sleep(5000);
             Write("Complete");
         }
 
+        // TŘETÍ, STEJNÁ BLOKOVACÍ PRÁCE, ALE NA DRUHÉM VLÁKNĚ
         private void button3_Click(object sender, EventArgs e)
         {
             Task.Run(() =>
@@ -48,7 +52,7 @@ namespace UIResponsivness
                 }
             });
 
-            // Toto způsobí výjimku
+            // Toto způsobí výjimku - NASTAVENÍ VLASTNOSTÍ PRVKŮ FOMULÁŘE MUSÍ PROBÍHAT Z UI VLÁKNA
             //Task.Run(() =>
             //{
             //    Thread.Sleep(5000);
