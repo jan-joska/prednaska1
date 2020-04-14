@@ -20,32 +20,34 @@ namespace AsyncAwait6
     {
         public static async Task Main(string[] args)
         {
-            //Sample 1
+            //Sample 1 - NEMÁM CO AWAITOVAT, ZPRACOVÁVÁNÍ POJEDE HNED DÁL
             Console.WriteLine("Volám async funkionalitu");
             DoWorkAsync();
             Console.WriteLine("Ted uz by to melo byt stazene");
             Console.ReadLine();
 
-            // Sample 2 - vyjimka ve vzduchu
-            //Console.WriteLine("Volám async funkionalitu");
-            //try
-            //{
-            //    DoWorkAsync2();
-            //}
-            //catch (Exception e)
-            //{
-            //    Console.WriteLine(e);
-            //}
-            //Console.WriteLine("Ted uz by to melo byt stazene");
+            // Sample 2 - vyjimka ve vzduchu - NEMÁM CO AWAITOVAT, VÝJIMKA NENÍ PŘEHOZENA, ZPRACOVÁVÁNÍ
+            // JEDE DÁL, NIC NECHYTIM
+            Console.WriteLine("Volám async funkionalitu");
+            try
+            {
+                DoWorkAsync2();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            Console.WriteLine("Ted uz by to melo byt stazene");
 
 
-            //Sample jak uzivat void
-            //var c = new TestClass();
-            //c.OperationInvoked += COnOperationInvoked;
-            //c.FireEvent();
-            //Console.ReadLine();
+            // Sample jak uzivat void - KOREKTNÍ UŽÍTÍ VOID - UDÁLOST
+            var c = new TestClass();
+            c.OperationInvoked += COnOperationInvoked;
+            c.FireEvent();
+            Console.ReadLine();
         }
 
+        // UDÁLOST NEMÁ CO AWAITOVAT V POSTUPU VOLÁNÍ JE NA VRACHOLU
         private static async void COnOperationInvoked(object sender, EventArgs e)
         {
             await Task.Delay(500);

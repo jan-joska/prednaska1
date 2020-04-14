@@ -48,7 +48,7 @@ namespace AsyncAwait5
         private async void button2_Click(object sender, EventArgs e)
         {
             var c = new WebClient();
-            var result = await c.DownloadStringTaskAsync(new Uri("http://www.idnes.cz")).ConfigureAwait(false);
+            var result = await c.DownloadStringTaskAsync(new Uri("http://www.idnes.cz")).ConfigureAwait(false); // <-- chyba zde
             textBox1.Text = result.Length.ToString();
         }
 

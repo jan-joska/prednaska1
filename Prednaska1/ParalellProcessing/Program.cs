@@ -49,24 +49,6 @@ namespace ParalellProcessing
             sw.Stop();
             return sw.ElapsedMilliseconds;
         }
-
-        
-
-    //private static void CalculateSerial()
-    //{
-    //    Console.WriteLine("Calculating serial");
-    //    for (var i = 0; i <= 2000; i++)
-    //    {
-    //        Thread.Sleep(1);
-    //    }
-    //}
-
-    //private static void CalculateParalell()
-    //{
-    //    Console.WriteLine("Calculating in paralell");
-    //    Parallel.For(0, 2000, i => { Thread.Sleep(1); });
-    //}
-
     private static void CalculateSerial()
         {
             Console.WriteLine("Calculating serial");
